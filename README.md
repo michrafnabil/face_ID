@@ -1,6 +1,6 @@
-# 🚀 Système de Reconnaissance Faciale - Version 2
+# 🚀 Système de Reconnaissance Faciale 
 
-Système de reconnaissance faciale en temps réel utilisant YOLO pour la détection et FaceNet pour la reconnaissance, avec une architecture modulaire améliorée.
+Système de reconnaissance faciale en temps réel utilisant YOLO pour la détection et FaceNet pour la reconnaissance.
 
 ## 📁 Structure du Projet
 
@@ -37,85 +37,8 @@ face_recognition_project_v2/
     └── generate_embeddings.py # Générer embeddings uniquement
 ```
 
-## 🎯 Avantages de cette Structure
 
-### ✅ Organisation Modulaire
-- **Séparation claire** entre configuration, utilitaires et scripts
-- **Réutilisabilité** des modules dans différents contextes
-- **Maintenance facilitée** avec des fichiers spécialisés
 
-### ✅ Gestion des Données
-- **data/prototypes/** : Stockage centralisé des modèles entraînés
-- **data/results/** : Historique des détections avec timestamps
-- **models/** : Modèles de deep learning séparés des données
-
-### ✅ Scripts Dédiés
-- Un script par tâche pour une utilisation claire
-- Temps d'exécution affiché pour chaque script
-- Messages informatifs et structurés
-
-## 🚀 Installation
-
-### 1. Cloner le projet
-```bash
-cd C:\Users\DELL\Downloads\face_recognition_project_v2
-```
-
-### 2. Créer un environnement virtuel
-```bash
-python -m venv venv
-venv\Scripts\activate  # Windows
-```
-
-### 3. Installer les dépendances
-```bash
-pip install -r requirements.txt
-```
-
-## 📖 Utilisation
-
-### Méthode 1: Via main.py (Recommandé)
-
-#### 1️⃣ Construire la whitelist (première utilisation)
-```bash
-python main.py --build-whitelist
-```
-**Fait:** Preprocessing + Génération d'embeddings en une seule commande
-
-#### 2️⃣ Lancer la détection
-```bash
-python main.py
-```
-**Fait:** Détection depuis webcam + Reconnaissance + Sauvegarde résultat
-
-#### 3️⃣ Autres options
-```bash
-python main.py --preprocess    # Preprocessing seul
-python main.py --embeddings    # Embeddings seuls
-python main.py --help          # Aide complète
-```
-
-### Méthode 2: Via les Scripts Dédiés
-
-#### 🔨 Construction de la whitelist
-```bash
-python scripts/build_whitelist.py
-```
-
-#### 🎥 Détection et reconnaissance
-```bash
-python scripts/run_detection.py
-```
-
-#### 🔧 Preprocessing uniquement
-```bash
-python scripts/preprocess.py
-```
-
-#### 🧠 Embeddings uniquement
-```bash
-python scripts/generate_embeddings.py
-```
 
 ## ⚙️ Configuration
 
@@ -194,40 +117,8 @@ FACENET_SIZE = 160
 - Images JPEG haute qualité (95%)
 - Résultats horodatés
 
-### 🛡️ Robustesse
-- Gestion des erreurs Git (Windows)
-- Validation des images chargées
-- Messages d'erreur informatifs
 
-## 🆚 Différences avec la V1
 
-| Aspect | V1 (Beta) | V2 (Nouvelle) |
-|--------|-----------|---------------|
-| **Structure** | Fichiers plats | Modulaire organisée |
-| **Data** | models/ mixte | data/ séparé |
-| **Scripts** | main.py unique | Scripts dédiés |
-| **Résultats** | Racine du projet | data/results/ |
-| **Temps d'exec** | ✅ Ajouté | ✅ Tous les scripts |
-| **Imports** | src.* | src.utils.* |
-
-## 🐛 Dépannage
-
-### Problème: FileNotFoundError avec Git
-**Solution:** Déjà corrigé via `os.environ['GIT_PYTHON_REFRESH'] = 'quiet'`
-
-### Problème: Aucun prototype trouvé
-**Solution:** Exécutez d'abord `python main.py --build-whitelist`
-
-### Problème: Webcam ne fonctionne pas
-**Solution:** Vérifiez que la webcam est connectée et autorisée
-
-## 📄 License
-
-Projet éducatif - Libre d'utilisation
-
-## 👤 Auteur
-
-Développé pour un système de reconnaissance faciale modulaire et professionnel.
 
 ---
 
@@ -235,3 +126,4 @@ Développé pour un système de reconnaissance faciale modulaire et professionne
 - Preprocessing: ~5-10 secondes (50 images)
 - Embeddings: ~3-5 secondes (4 personnes)
 - Détection: ~2-3 secondes (avec webcam)
+
